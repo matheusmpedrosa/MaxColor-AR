@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR QuickLook Test</title>
+</head>
+<body>
+    <h1>View Painting in AR</h1>
+    <button id="ar-button">View in AR</button>
+
+    <script>
+        document.getElementById('ar-button').addEventListener('click', function() {
+            const usdzUrl = './frame.usdz'; // Update with your file URL
+            const anchor = document.createElement('a');
+            anchor.setAttribute('rel', 'ar');
+            anchor.setAttribute('href', usdzUrl);
+            anchor.click();
+        });
+    </script>
+</body>
+</html>
