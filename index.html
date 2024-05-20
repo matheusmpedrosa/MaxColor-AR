@@ -3,36 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR QuickLook Test</title>
+    <title>AR QuickLook Sizes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 300px;
+        }
+        .ar-button {
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .ar-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>View Rectangle in AR</h1>
-    <form id="size-form">
-        <label for="width">Width (m):</label>
-        <input type="number" id="width" name="width" step="0.01" value="1">
-        <label for="height">Height (m):</label>
-        <input type="number" id="height" name="height" step="0.01" value="1">
-        <button type="submit">View in AR</button>
-    </form>
+    <div class="button-container">
+        <button class="ar-button" data-file="21x30.reality">21x30</button>
+        <button class="ar-button" data-file="30x42.reality">30x42</button>
+        <button class="ar-button" data-file="40x60.reality">40x60</button>
+        <button class="ar-button" data-file="50x75.reality">50x75</button>
+        <button class="ar-button" data-file="60x90.reality">60x90</button>
+        <button class="ar-button" data-file="70x105.reality">70x105</button>
+        <button class="ar-button" data-file="80x120.reality">80x120</button>
+    </div>
 
     <script>
-        document.getElementById('size-form').addEventListener('submit', function(event) {
-            event.preventDefault();
+        document.querySelectorAll('.ar-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const realityFile = this.getAttribute('data-file');
+                const realityUrl = `./${realityFile}`; // Update with your file URL
 
-            const width = document.getElementById('width').value;
-            const height = document.getElementById('height').value;
-
-            const realityUrl = './picture_frame.reality'; // Update with your file URL
-
-            const anchor = document.createElement('a');
-            anchor.setAttribute('rel', `ar`);
-            anchor.setAttribute('href', realityUrl);
-
-            const arLink = document.createElement('a');
-            arLink.setAttribute('rel', 'ar');
-            arLink.setAttribute('href', realityUrl);
-            arLink.setAttribute('style', `width: ${width}m; height: ${height}m;`);
-            arLink.click();
+                const anchor = document.createElement('a');
+                anchor.setAttribute('rel', 'ar');
+                anchor.setAttribute('href', realityUrl);
+                anchor.click();
+            });
         });
     </script>
 </body>
