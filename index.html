@@ -41,6 +41,19 @@
 </head>
 <body>
     <h1>View Rectangle in AR</h1>
+    <button id="ar-button">View in AR</button>
+
+    <script>
+        document.getElementById('ar-button').addEventListener('click', function() {
+            const realityUrl = './frame.reality'; // Update with your file URL
+            const anchor = document.createElement('a');
+            anchor.setAttribute('rel', 'ar');
+            anchor.setAttribute('href', realityUrl);
+            anchor.click();
+        });
+    </script>
+
+    <!-- <h1>View Rectangle in AR</h1>
     <div class="button-container">
         <button class="ar-button" data-file="21x30.reality">21x30</button>
         <button class="ar-button" data-file="30x42.reality">30x42</button>
@@ -63,6 +76,6 @@
                 anchor.click();
             });
         });
-    </script>
+    </script> -->
 </body>
 </html>
