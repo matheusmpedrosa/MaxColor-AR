@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR QuickLook Sizes</title>
+    <!-- <title>Max Color</title> -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,31 +40,20 @@
     </style>
 </head>
 <body>
-    <h1>View Rectangle in AR</h1>
+    <header>
+        <img class="img-responsive" src="//maxcolor.net.br/wp-content/uploads/2023/03/LOGO-scaled.jpg" alt="Maxcolor" style="max-width:250px;">
+    </header>
+    <h1>Selecione o Tamanho</h1>
     <div class="button-container">
-        <button class="ar-button" data-file="21x30.reality">21x30</button>
-        <button class="ar-button" data-file="30x42.reality">30x42</button>
-        <button class="ar-button" data-file="40x60.reality">40x60</button>
-        <button class="ar-button" data-file="50x75.reality">50x75</button>
-        <button class="ar-button" data-file="60x90.reality">60x90</button>
-        <button class="ar-button" data-file="70x105.reality">70x105</button>
-        <button class="ar-button" data-file="80x120.reality">80x120</button>
-        <button class="ar-button" data-file="100x150.reality">100x150</button>
-        <button class="ar-button" data-file="120x180.reality">120x180</button>
+        <a href="https://yourwebsite.com/rectangle-21x30.reality" class="ar-button" rel="ar">21x30</a>
+        <a href="https://yourwebsite.com/rectangle-30x42.reality" class="ar-button" rel="ar">30x42</a>
+        <a href="https://yourwebsite.com/rectangle-40x60.reality" class="ar-button" rel="ar">40x60</a>
+        <a href="https://yourwebsite.com/rectangle-50x75.reality" class="ar-button" rel="ar">50x75</a>
+        <a href="https://yourwebsite.com/rectangle-60x90.reality" class="ar-button" rel="ar">60x90</a>
+        <a href="https://yourwebsite.com/rectangle-70x105.reality" class="ar-button" rel="ar">70x105</a>
+        <a href="https://yourwebsite.com/rectangle-80x120.reality" class="ar-button" rel="ar">80x120</a>
+        <a href="https://yourwebsite.com/rectangle-100x150.reality" class="ar-button" rel="ar">100x150</a>
+        <a href="https://yourwebsite.com/rectangle-120x180.reality" class="ar-button" rel="ar">120x180</a>
     </div>
-
-    <script>
-        document.querySelectorAll('.ar-button').forEach(button => {
-            button.addEventListener('click', function() {
-                const realityFile = this.getAttribute('data-file');
-                const realityUrl = `./${realityFile}`; // Update with your file URL
-
-                const anchor = document.createElement('a');
-                anchor.setAttribute('rel', 'ar');
-                anchor.setAttribute('href', realityUrl);
-                anchor.click();
-            });
-        });
-    </script>
 </body>
 </html>
